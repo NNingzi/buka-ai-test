@@ -1,7 +1,9 @@
 # buka-ai-test
 
 基于 Python、pytest 和 Playwright 的 Buka Cloud Web 自动化测试项目。
-当前仅实现第一条无破坏性用例：管理员正常登录。
+当前实现 7 条无破坏性的登录与访问控制用例：成功登录、错误密码、空邮箱、空密码、
+错误邮箱格式、登录后退出，以及未登录直接访问仪表盘。详细步骤和实际执行结果见
+[`TEST_CASES.md`](TEST_CASES.md)。
 
 ## 本地准备
 
@@ -31,7 +33,7 @@ pytest
 python -m playwright show-trace artifacts/traces/<trace-file>.zip
 ```
 
-## 后续范围
+## 当前边界与后续范围
 
 后续再逐步增加会话保持、仪表盘、11 个导航入口、跨页面数据一致性、订单统计和
 订阅价格计算测试。本阶段不执行购买、充值、修改密码、重置流量或提交工单。

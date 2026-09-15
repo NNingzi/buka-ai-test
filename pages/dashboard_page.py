@@ -23,3 +23,12 @@ class DashboardPage:
         expect(self.user_email).to_have_text(email)
         expect(self.admin_navigation).to_be_visible()
         expect(self.logout_button).to_be_visible()
+
+    def logout(self) -> None:
+        self.logout_button.click()
+
+    def open_directly(self) -> None:
+        self.page.goto("/#/dashboard", wait_until="domcontentloaded")
+
+    def expect_access_blocked(self) -> None:
+        expect(self.app).to_be_hidden()
